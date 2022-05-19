@@ -1,6 +1,6 @@
-#SE754
+# SE754
 
-##Demo A5
+## Demo A5
 ![example workflow](https://github.com/valerio-terragni/SE754_A5_DEMO_JSP/actions/workflows/gradle.yml/badge.svg)
 
 
