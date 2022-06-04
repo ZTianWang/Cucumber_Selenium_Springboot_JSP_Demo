@@ -25,7 +25,7 @@ public class LoginStepDefinitions {
     private WebDriver driver;
     private LoginPage loginPage;
 
-    @Before
+    @Before("@Login")
     public void setup() {
         //System.setProperty("webdriver.chrome.driver", "webdrivers/macos/chromedriver");
         WebDriverManager.chromedriver().setup();
@@ -41,23 +41,23 @@ public class LoginStepDefinitions {
         }
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         loginPage = new LoginPage(driver);
     }
 
-    @AfterStep
-    public void afterEachStep() {
-        // to make the test at human speed
-        if (System.getenv("headless") == null || !System.getenv("headless").equals("true")) {
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
+//    @AfterStep
+//    public void afterEachStep() {
+//        // to make the test at human speed
+//        if (System.getenv("headless") == null || !System.getenv("headless").equals("true")) {
+//            try {
+//                Thread.sleep(2000);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//    }
 
-    @After
+    @After("@Login")
     public void tearDown() {
         driver.quit();
     }

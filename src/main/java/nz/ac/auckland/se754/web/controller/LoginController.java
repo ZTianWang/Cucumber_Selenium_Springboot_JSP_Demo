@@ -41,7 +41,7 @@ public class LoginController {
 		model.put("name", name);
 		model.put("password", password);
 		
-		return "welcome";
+		return "/welcome";
 	}
 
 }

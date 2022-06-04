@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>No Name (add projectName to cucumber-reporting.properties)</td>
+      <td>04 Jun 2022, 15:46</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">nz.ac.auckland.se754.web.CucumberSpringConfiguration.setUp()</td>
+              <td>3</td>
+              <td class="duration" data-value="332333">0.000</td>
+              <td class="duration" data-value="332333">0.000</td>
+              <td class="duration" data-value="997000">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.ac.auckland.se754.web.stepdefs.AddStepDefs.i_click_addBtn()</td>
+              <td>2</td>
+              <td class="duration" data-value="118604550">0.118</td>
+              <td class="duration" data-value="118604550">0.134</td>
+              <td class="duration" data-value="237209100">0.237</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.ac.auckland.se754.web.stepdefs.AddStepDefs.i_enter_num1(java.lang.Integer)</td>
+              <td>2</td>
+              <td class="duration" data-value="97643200">0.097</td>
+              <td class="duration" data-value="97643200">0.098</td>
+              <td class="duration" data-value="195286400">0.195</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.ac.auckland.se754.web.stepdefs.AddStepDefs.i_enter_num2(java.lang.Integer)</td>
+              <td>2</td>
+              <td class="duration" data-value="71308950">0.071</td>
+              <td class="duration" data-value="71308950">0.072</td>
+              <td class="duration" data-value="142617900">0.142</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.ac.auckland.se754.web.stepdefs.AddStepDefs.i_was_in_the_add_page()</td>
+              <td>2</td>
+              <td class="duration" data-value="692148950">0.692</td>
+              <td class="duration" data-value="692148950">1.203</td>
+              <td class="duration" data-value="1384297900">1.384</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.ac.auckland.se754.web.stepdefs.AddStepDefs.setup()</td>
+              <td>3</td>
+              <td class="duration" data-value="2503353800">2.503</td>
+              <td class="duration" data-value="2503353800">3.157</td>
+              <td class="duration" data-value="7510061400">7.510</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.ac.auckland.se754.web.stepdefs.AddStepDefs.tearDown()</td>
+              <td>3</td>
+              <td class="duration" data-value="788871766">0.788</td>
+              <td class="duration" data-value="788871766">0.806</td>
+              <td class="duration" data-value="2366615300">2.366</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.ac.auckland.se754.web.stepdefs.AddStepDefs.the_result_is(java.lang.Integer)</td>
+              <td>2</td>
+              <td class="duration" data-value="33399700">0.033</td>
+              <td class="duration" data-value="33399700">0.034</td>
+              <td class="duration" data-value="66799400">0.066</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.ac.auckland.se754.web.stepdefs.LoginStepDefinitions.i_enter_as_password_field(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="81789300">0.081</td>
+              <td class="duration" data-value="81789300">0.081</td>
+              <td class="duration" data-value="81789300">0.081</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.ac.auckland.se754.web.stepdefs.LoginStepDefinitions.i_enter_as_user_name_field(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="99696800">0.099</td>
+              <td class="duration" data-value="99696800">0.099</td>
+              <td class="duration" data-value="99696800">0.099</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.ac.auckland.se754.web.stepdefs.LoginStepDefinitions.i_press_the_submit_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="331115600">0.331</td>
+              <td class="duration" data-value="331115600">0.331</td>
+              <td class="duration" data-value="331115600">0.331</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.ac.auckland.se754.web.stepdefs.LoginStepDefinitions.i_should_see_the_welcome_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="32877600">0.032</td>
+              <td class="duration" data-value="32877600">0.032</td>
+              <td class="duration" data-value="32877600">0.032</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.ac.auckland.se754.web.stepdefs.LoginStepDefinitions.i_visit_the_login_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="1063337200">1.063</td>
+              <td class="duration" data-value="1063337200">1.063</td>
+              <td class="duration" data-value="1063337200">1.063</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.ac.auckland.se754.web.stepdefs.LoginStepDefinitions.setup()</td>
+              <td>1</td>
+              <td class="duration" data-value="2386979100">2.386</td>
+              <td class="duration" data-value="2386979100">2.386</td>
+              <td class="duration" data-value="2386979100">2.386</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.ac.auckland.se754.web.stepdefs.LoginStepDefinitions.tearDown()</td>
+              <td>1</td>
+              <td class="duration" data-value="767445400">0.767</td>
+              <td class="duration" data-value="767445400">0.767</td>
+              <td class="duration" data-value="767445400">0.767</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>15</td>
+            <td>26</td>
+            <td class="duration">0.641</td>
+            <td class="duration">7.510</td>
+            <td class="duration">16.667</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>

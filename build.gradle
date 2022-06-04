@@ -32,7 +32,7 @@ dependencies {
     // Mockito
     implementation "org.mockito:mockito-core:4.4.0"
     implementation group: 'org.mockito', name: 'mockito-junit-jupiter', version: '4.4.0'
-    // Cucumber
+    // Cucumber 
     testImplementation 'io.cucumber:cucumber-java:7.3.4'
     testImplementation 'io.cucumber:cucumber-junit:7.3.4'
     testImplementation group: 'de.monochromata.cucumber', name: 'reporting-plugin', version: '4.0.102'
@@ -60,10 +60,13 @@ task cucumber() {
         javaexec {
             main = "io.cucumber.core.cli.Main"
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
-            args = ['--plugin', 'pretty',
+            args = [
+                    '--tags','@Test',
+                    '--plugin', 'pretty',
                     '--plugin', 'de.monochromata.cucumber.report.PrettyReports:target/cucumber-report',
                     '--glue', 'nz.ac.auckland.se754.web', // package of the step definitions (java files)
-                    'src/test/resources/features'] // where the features file are located (feature files)
+                    'src/test/resources/features' // where the features file are located (feature files)
+            ]
         }
     }
 }

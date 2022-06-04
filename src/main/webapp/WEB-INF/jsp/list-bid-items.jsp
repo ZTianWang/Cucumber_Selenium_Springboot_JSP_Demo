@@ -12,6 +12,7 @@
            ID ${entry.id} <br/>
            name ${entry.name} <br/>
     </c:forEach>
+
 </body>
 
 </html>
